@@ -152,14 +152,14 @@ tasklist | find /i "%MyProcess%">nul  && (echo %MyProcess% Already running) || s
 
 
 
-rem crear_dsk
-if exist MSX2-C.dsk del /f /Q MSX2-C.dsk
-copy tools\Disk-Manager-v0.17\main.dsk .\MSX2-C.dsk
-rem añadimos todos los .bas de la carpeta  al disco
-rem por favor mirar for /?
-for /R dsk/ %%a in (*.*) do (
-    start /wait tools/Disk-Manager-v0.17/DISKMGR.exe -A -F -C MSX2-C.dsk "%%a")   
- move /y MSX2-C.dsk .\..\..\docs
+rem rem crear_dsk
+rem if exist MSX2-C.dsk del /f /Q MSX2-C.dsk
+rem copy tools\Disk-Manager-v0.17\main.dsk .\MSX2-C.dsk
+rem rem añadimos todos los .bas de la carpeta  al disco
+rem rem por favor mirar for /?
+rem for /R dsk/ %%a in (*.*) do (
+rem     start /wait tools/Disk-Manager-v0.17/DISKMGR.exe -A -F -C MSX2-C.dsk "%%a")   
+rem  move /y MSX2-C.dsk .\..\..\docs
 
 
 

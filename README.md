@@ -8,7 +8,7 @@ Juego de naves espaciales o Shoot'em up (Dispara a todos) para la plataforma ret
 
 ### Juega online
 
-https://kikemadrigal.github.io/MSX-basic-c-scroll-horizontal-MSX2-deep-space/?disk=MSX2-C.dsk
+https://kikemadrigal.github.io/?disk=capkirk.dsk
 
 ### Echa una partida multijugador
 
