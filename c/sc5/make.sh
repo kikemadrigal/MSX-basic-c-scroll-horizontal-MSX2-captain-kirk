@@ -2,7 +2,7 @@
 
 APP="capkirk"
 
-# echo "Creando el programa para la depuración en WSL o mingw"
+# echo Creando el programa para la depuración en WSL o mingw
 #SDCC --code-loc 0x106 --data-loc 0x0 --disable-warning 196 -mz80 --no-std-crt0 --opt-code-size fusion.lib -Lfusion-c/lib/ fusion-c/include/crt0_msxdos.rel ${APP}.c
 #./tools/hex2bin/hex2bin.exe -e com ${APP}.ihx
 #mv ${APP}.com dsk/
@@ -12,14 +12,19 @@ APP="capkirk"
 
 
 
+# echo Creando el programa para la depuración en linux en una carpeta
+# sdcc --code-loc 0x106 --data-loc 0x0 --disable-warning 196 -mz80 --no-std-crt0 --opt-code-size fusion.lib -Lfusion-c/lib/ fusion-c/include/crt0_msxdos.rel ${APP}.c
+# ./Tools/Hex2bin/hex2bin -e com ${APP}.ihx
+# mv ${APP}.com dsk/
+# openmsx -machine Philips_NMS_8255 -diska dsk/ &
 
 
-
-# echo "Creando el programa para la depuración en linux"
+# echo Creando el programa para la depuración en linux en rom
 # sdasz80 -o ./fusion-c/include/crt0msx_rom.rel ./fusion-c/source/crt0msx_rom.s
 # sdcc -mz80 --debug --constseg DUMMY -c ${APP}.c -o ${APP}.rel
 # sdcc -mz80 --debug --constseg DUMMY --no-std-crt0 --code-loc 0x4100 --data-loc 0xc000 --out-fmt-ihx -o ${APP}.ihx fusion.lib -L ./fusion-c/lib/ ./fusion-c/include/crt0msx_rom.rel ${APP}.rel 
-# ./tools/hex2bin/hex2bin.exe -e rom -s 0x4000 -l 0x8000 ${APP}.ihx
+# ./Tools/Hex2bin/hex2bin -e rom -s 0x4000 -l 0x8000 ${APP}.ihx
+# openmsx -machine Philips_NMS_8255 -carta ${APP}.rom
 
 
 
@@ -27,13 +32,11 @@ APP="capkirk"
 
 
 
-
-echo "Creando el programa para MAC"
-sdasz80 -o ./fusion-c/include/crt0msx_rom.rel ./fusion-c/source/crt0msx_rom.s
-sdcc -mz80 --debug --constseg DUMMY -c capkirk.c -o capkirk.rel
-SDCC --code-loc 0x106 --data-loc 0x0 --disable-warning 196 -mz80 --no-std-crt0 --opt-code-size fusion.lib -L fusion-c/lib/ fusion-c/include/crt0_msxdos.rel capkirk.rel
-./Tools/Hex2bin/hex2bin -e com capkirk.ihx 
-mv capkirk.com dsk/ 
+# echo Creando el programa para MAC
+sdcc -mz80 --debug --constseg DUMMY -c ${APP}.c -o ${APP}.rel
+sdcc --code-loc 0x106 --data-loc 0x0 --disable-warning 196 -mz80 --no-std-crt0 --opt-code-size fusion.lib -Lfusion-c/lib/ fusion-c/include/crt0_msxdos.rel ${APP}.c
+./Tools/Hex2bin/hex2bin -e com ${APP}.ihx
+mv ${APP}.com dsk/
 /Applications/openMSX.app/Contents/MacOS/openMSX -machine Philips_NMS_8255  -diska dsk/ &
 
 
@@ -41,12 +44,12 @@ mv capkirk.com dsk/
 
 
 rm -rf *.ihx
-rm -rf *.adb´
+rm -rf *.adb
 rm -rf *.cdb
 rm -rf *.rom
 rm -rf *.asm
 rm -rf *.lk
-rm -rf *.lst´
+rm -rf *.lst
 rm -rf *.map
 rm -rf *.map
 rm -rf *.noi
