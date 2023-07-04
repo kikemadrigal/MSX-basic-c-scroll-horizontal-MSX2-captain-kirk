@@ -95,10 +95,11 @@ TStar array_stars[10];*/
 /*********DEFINICIONES************************/
 void main(void){
   //Ponemos a 0 todos los bytes de la page 0 de la VRAM
-  FillVram(0,0,65535); 
+  //FillVram(0,0,65535); 
   SetColors(15,1,1);
   Screen(5);   
   SetColors(15,1,1);
+  PutText(60,100,"Loading...",8);
   //Le quitamos el sonido a las pulsaciones	
   KeySound(0);
   load_into_buffer("tileset.sc5");
