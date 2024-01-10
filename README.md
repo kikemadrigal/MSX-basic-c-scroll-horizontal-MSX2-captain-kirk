@@ -103,9 +103,25 @@ Este directorio puede ser abierto con la opción de [OpenMSX+OpenMSX catapult](h
 
 # Basic
 
-## Screen 5
+
+## Screen 2
 
 ### Juega
 http://msx.tipolisto.es/webmsx/standalone/?disk=files/space2.dsk
 
+<img src=docs/basic-sc2.PNG width="500px" >
+
+
+## Screen 5
+
+### Juega
+
+ https://kikemadrigal.github.io/MSX-basic-c-scroll-horizontal-MSX2-captain-kirk/game-basic-sc2.dsk
+
+
 <img src=docs/basic-1.PNG width="500px" >
+
+
+
+
+
