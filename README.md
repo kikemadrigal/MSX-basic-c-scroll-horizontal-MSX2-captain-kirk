@@ -108,7 +108,7 @@ Este directorio puede ser abierto con la opción de [OpenMSX+OpenMSX catapult](h
 
 ### Juega
 
- https://kikemadrigal.github.io/MSX-basic-c-scroll-horizontal-MSX2-captain-kirk/game-basic-sc2.dsk
+ https://kikemadrigal.github.io/MSX-basic-c-scroll-horizontal-MSX2-captain-kirk/?disk=game-basic-sc2.dsk
 
 
 <img src=docs/basic-sc2.PNG width="500px" >
